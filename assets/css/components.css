@@ -106,7 +106,7 @@ h2[data-sub] {
 		content: attr(data-sub);
 		display: block;
 		width: 100%;
-		width: 460px;
+		max-width: 460px;
 		height: 75px;
 		background: url(../img/bg_title.png) no-repeat;
 		background-size: contain;
@@ -123,7 +123,7 @@ h2[data-sub] {
 		@media (max-width: 450px) {
 			padding-top: 0.2rem;
 			padding-right: unset;
-			font-size: var(--fs-md);
+			font-size: 0.4em;
 			letter-spacing: var(--ls-ss);
 			top: -60px;
 			left: unset;
