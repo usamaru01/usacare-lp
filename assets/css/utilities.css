@@ -1,0 +1,37 @@
+@charset "utf-8";
+/*
+------------------------------------------------
+UTILITIES
+
+Styles for pinpoint adjustments
+------------------------------------------------
+*/
+
+
+/* responsible */
+.u-sp-only {/* Show on mobile only */
+	display: none;
+	@media (max-width: 450px) {
+		display: block;
+	}
+}
+
+.u-pc-only {/* Show on desktop only */
+	@media (max-width: 450px) {
+		display: none;
+	}
+}
+
+.u-dp-none {
+	display: none;
+}
+
+span.u-break {
+	display: inline-block;
+}
+
+/* pointer */
+.u-pointer:hover {
+		cursor: pointer;
+}
+

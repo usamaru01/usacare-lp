@@ -1,0 +1,50 @@
+@charset "utf-8";
+/*
+------------------------------------------------
+LAYOUT
+
+Global layout settings (width, max-width, centering)
+------------------------------------------------ */
+
+:root {
+	/* max-width */
+	--maxw-s: 600px;
+	--maxw-m: 900px;
+	--maxw-l: 1200px;
+}/* END root */
+
+body {
+	display: grid;
+	grid-template-rows: auto min-content;
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+}
+
+svg {
+	/* mainの上部の曲線 */
+	translate: 0 10px;
+}
+
+.sections {
+	position: relative;
+	background: #fff;
+	z-index: 3;
+}
+
+section:has(h2[data-sub]) {
+	padding-top: 10rem;
+}
+
+.contents {
+
+	section:not(.form) {
+		max-width: var(--maxw-l);
+		margin-inline: auto;
+	}
+}
+

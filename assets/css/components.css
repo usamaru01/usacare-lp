@@ -1,0 +1,263 @@
+@charset "utf-8";
+/*
+------------------------------------------------
+COMPONENTS
+
+Styles for reusable components
+------------------------------------------------
+*/
+
+/* ----------
+	button
+---------- */
+button,
+button::file-selector-button {
+	inline-size: fit-content;
+	border: none;
+}
+
+.btn_wrap { /* ボタンの親要素 */
+	padding-block: 2rem;
+	display: flex;
+  justify-content: center;
+
+	&.btns {
+	gap: 1rem;
+	}
+}
+
+button.base-default { /* 普通サイズ */
+	width: 100%;
+	max-width: 360px;
+	height: 56px;
+	border-radius: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button.base-small { /* 小さめサイズ */
+	width: 100%;
+	max-width: 280px;
+	height: 48px;
+	border-radius: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button.btn-primary { /* 塗りボタン */
+	border: none;
+	color: var(--c-white);
+	border-radius: 100px;
+	background-color: var(--c-green-70);
+
+	&:hover {
+		background-color: var(--c-green-80);
+	}
+}
+
+button.btn-secondary { /* ラインボタン */
+	border:solid 1px var(--c-green-70);
+	color: var(--c-green-70);
+	border-radius: 100px;
+	background-color: var(--c-white);
+
+	&:hover {
+		background-color: #fafafa;
+	}
+}
+
+.btn-shadow {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+	&:hover {
+		box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
+		transform: translateY(2px);
+	}
+}
+
+.add_icon { /* buttonにつける */
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.btn_icon { /* imgにつける */
+	width: 1em;
+	height: auto;
+}
+
+
+/* ----------
+	  title
+---------- */
+
+.title_wrap { /* タイトルの親要素 */
+	padding-block: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+h2[data-sub] {
+	position: relative;
+
+	&::before {
+		content: attr(data-sub);
+		display: block;
+		width: 100%;
+		width: 460px;
+		height: 75px;
+		background: url(../img/bg_title.png) no-repeat;
+		background-size: contain;
+		padding-top: 0.4rem;
+		padding-right: 20px;
+		color: var(--c-green-70);
+		font-size: var(--fs-l);
+		letter-spacing: var(--ls-s);
+		text-align: center;
+		position: absolute;
+		top: -80px;
+		left: calc( 50% - 230px);
+
+		@media (max-width: 450px) {
+			padding-top: 0.2rem;
+			padding-right: unset;
+			font-size: var(--fs-md);
+			letter-spacing: var(--ls-ss);
+			top: -60px;
+			left: unset;
+		}
+	}
+}
+
+/* ----------
+	footer
+---------- */
+
+footer {
+padding-block: 2rem;
+color: var(--c-white);
+background-color: var(--c-green-70);
+color: var(--c-white);
+}
+
+/* ----------
+	  MODAL
+---------- */
+
+body.is-modal-open {
+	overflow: hidden;
+}
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	transition: opacity 0.25s ease;
+}
+
+.modal.is-open {/* 開いた状態 */
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+
+	.modal_content {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.modal_overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+	position: relative;
+	z-index: 1;
+	width: 90%;
+	max-width: 520px;
+	margin: 10vh auto;
+	padding: 24px;
+	background: #fff;
+	border-radius: 8px;
+
+	transform: translateY(20px);
+	opacity: 0;
+	transition: transform 1s ease, opacity .3s ease;
+}
+.modal_close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background-color: unset;
+
+	.modal_close_icon {
+		display: block;
+		width: 30px;
+		aspect-ratio: 1/ 1;
+		background-color: var(--c-gray-60);
+		border-radius: 50px;
+		margin-inline: auto;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 16px;
+			height: 2px;
+			background-color: var(--c-gray-100);
+			transform-origin: center;
+		}
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+.modal_body {
+	p {
+		padding: 3rem 0 2rem;
+		font-size: var(--fs-md);
+		text-align: center;
+	}
+
+	p.modal_note {
+		padding-block: 0;
+	}
+
+	img {
+		margin-block: 2rem;
+		width: 70%;
+		margin-inline: auto;
+	}
+
+	a {
+		display: block;
+		color: var(--c-green-80);
+		width: fit-content;
+		margin-inline: auto;
+		padding: 0.7rem 1.2rem;
+		border-radius: 50px;
+		transition: background-color 0.5s ease, color 0.5s ease;
+	}
+
+	p:hover a {
+		color: #fff;
+		background-color: var(--c-green-70);
+	}
+}
+
+
