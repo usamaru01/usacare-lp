@@ -274,6 +274,10 @@ section.faq { /* faq section */
 			padding: 1rem;
 			background-color: var(--c-gray-20);
 			border-radius: 16px;
+
+			@media (max-width: 900px) {
+				grid-template-columns: 75px 1fr;
+			}
 		}
 
 		.js_acc_content{
