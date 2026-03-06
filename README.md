@@ -69,3 +69,13 @@ PC・スマートフォンの両方で閲覧できるよう、レスポンシブ
 ## 公開
 
 GitHub Pagesで公開しています。
+
+---
+
+## Prototype (Figma)
+
+アプリのUIモックはFigmaで作成しています。
+画面遷移や操作イメージはこちらから確認できます。
+
+Figma Prototype:
+https://www.figma.com/proto/FX9hq4opZxNx8g5P3WFiH3/%E3%81%86%E3%81%95%E3%82%B1%E3%82%A2?node-id=2130-490&t=XfqXSyxHx28yVavM-1
