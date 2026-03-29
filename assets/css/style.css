@@ -68,7 +68,7 @@ section.about { /* about section */
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 16px;
-		padding-block: 4rem;
+		padding-block: 5rem;
 
 		.about_reason {
 			display: grid;
@@ -84,9 +84,6 @@ section.about { /* about section */
 				object-fit: contain;
 				margin-inline: auto;
 
-				&:nth-child(even) {
-						margin-top: 100px;
-					}
 			}
 
 			p {
