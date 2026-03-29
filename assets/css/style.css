@@ -81,7 +81,7 @@ section.about { /* about section */
 			img {
 				display: block;
 				width: 200px;
-				aspect-ratio: 1/1;
+				object-fit: contain;
 				margin-inline: auto;
 			}
 
@@ -100,17 +100,18 @@ section.shedding { /* shedding section */
 	.shedding_inner {
 		max-width: var(--maxw-m);
 		margin-inline: auto;
-		padding-inline: 2rem;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 3rem;
 		text-align: left;
 
 		@media (max-width: 450px) {
+				padding-inline: 2rem;
 				grid-template-columns: unset;
 				column-gap: unset;
+				row-gap: 3rem;
 				grid-template-rows: 1fr min-content;
-				row-gap: 1rem;
+				
 
 				.u-break { display: unset;}
 			}
@@ -122,10 +123,20 @@ section.shedding { /* shedding section */
 		p {
 			margin-bottom: 1rem;
 		}
+				p:last-child {
+					margin-bottom: 0;
+				}
 
 		.img_wrap {
 			display: grid;
-			place-content: center;
+			align-self: end;
+			justify-self: end;
+
+			img {
+			max-width: 350px;
+			height: auto;
+			object-fit: contain;
+			}
 		}
 	}
 }
